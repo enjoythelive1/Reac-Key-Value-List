@@ -1,5 +1,5 @@
 import * as React from "react";
-import {NoElements} from "../elements/key-value-list-no-elements";
+import {NoElements} from "../elements/no-elements";
 import {KeyValue} from "../structures/key-value";
 
 export interface KeyValueListProps {

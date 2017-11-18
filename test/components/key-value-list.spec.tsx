@@ -3,7 +3,7 @@ import {expect} from "chai";
 import {mount, ReactWrapper, shallow, ShallowWrapper} from "enzyme";
 import * as React from "react";
 import {KeyValueList} from "../../lib/components/key-value-list";
-import {NoElements} from "../../lib/elements/key-value-list-no-elements";
+import {NoElements} from "../../lib/elements/no-elements";
 
 describe("KeyValueListComponent", () => {
     it("renders", () => {
