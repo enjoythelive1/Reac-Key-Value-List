@@ -4,11 +4,19 @@ const Server = require('karma').Server;
 const tslint = require("gulp-tslint");
 const tsProject = ts.createProject("tsconfig.json");
 
-gulp.task('test', function (done) {
-    new Server({
-        configFile: __dirname + '/karma.conf.js',
-        singleRun: true
-    }, done).start();
+gulp.task('test', function () {
+    return new Promise(function (resolve, reject) {
+        new Server({
+            configFile: __dirname + '/karma.conf.js',
+            singleRun: true
+        }, function (exitcode) {
+            if (exitcode) {
+                return reject(new Error(`Exit code:  ${exitcode}`));
+            } else {
+                return resolve();
+            }
+        }).start();
+    });
 });
 
 gulp.task("build", function () {
