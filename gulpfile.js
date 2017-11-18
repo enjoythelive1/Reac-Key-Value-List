@@ -19,6 +19,10 @@ gulp.task('test', function () {
     });
 });
 
+gulp.task('only-test', ['test'], function () {
+    process.exit();
+});
+
 gulp.task("build", function () {
     return tsProject.src()
         .pipe(tsProject())
