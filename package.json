@@ -4,7 +4,7 @@
   "description": "A component to show and edit a list of key-value pairs",
   "main": "dist/index.js",
   "scripts": {
-    "test": "gulp build && gulp test && gulp lint",
+    "test": "gulp build && gulp only-test && gulp lint",
     "build": "gulp build"
   },
   "repository": {
