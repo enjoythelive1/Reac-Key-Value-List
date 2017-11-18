@@ -4,5 +4,9 @@
     "tslint-react"
   ],
   "rules": {
+    "interface-name": [
+      "never-prefix"
+    ],
+    "ordered-imports": false
   }
 }
