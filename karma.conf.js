@@ -21,7 +21,7 @@ module.exports = function (config) {
         webpack: testWebpackConfig,
         coverageReporter: {
             reporters:[
-                //{type: 'html', dir:'coverage/'},  // https://github.com/karma-runner/karma-coverage/issues/123
+                {type: 'html', dir: 'coverage/'},
                 {type: 'text'},
                 {type: 'text-summary'}
             ],
