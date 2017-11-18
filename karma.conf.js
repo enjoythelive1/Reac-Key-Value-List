@@ -9,7 +9,7 @@ module.exports = function (config) {
     config.set({
         frameworks: ["mocha"],
         files: [
-            "test/**/*"
+            "test/**/*.spec.*"
         ],
         preprocessors: {
             "lib/**/*.ts": ["sourcemap"],
