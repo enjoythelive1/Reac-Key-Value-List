@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es2015",
+    "jsx": "react",
+  "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "./lib/**/*"
+  ]
+}
