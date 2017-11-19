@@ -1,11 +1,12 @@
 {
   "name": "react-key-values-list",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A component to show and edit a list of key-value pairs",
   "main": "dist/index.js",
   "scripts": {
     "test": "gulp build && gulp only-test && gulp lint",
-    "build": "gulp build"
+    "build": "gulp build",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
