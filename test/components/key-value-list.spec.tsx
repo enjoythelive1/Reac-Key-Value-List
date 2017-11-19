@@ -30,7 +30,7 @@ describe("KeyValueListComponent", () => {
             rendered = shallow(component);
         });
 
-        it("has the same class", () => {
+        it("uses the custom class", () => {
             expect(rendered).to.have.className("custom-class");
         });
     });
