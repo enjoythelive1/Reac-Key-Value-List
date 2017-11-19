@@ -3,6 +3,7 @@ const ts = require("gulp-typescript");
 const Server = require('karma').Server;
 const tslint = require("gulp-tslint");
 const del = require("del");
+const sass = require('gulp-sass');
 const tsProject = ts.createProject("tsconfig.json");
 
 const distFolder = "dist";
@@ -26,10 +27,20 @@ gulp.task('only-test', ['test'], function () {
     process.exit();
 });
 
-gulp.task("build", ['clean'], function () {
+gulp.task("typescript", function () {
     return tsProject.src()
         .pipe(tsProject())
         .js.pipe(gulp.dest(distFolder));
+});
+
+gulp.task("style", function () {
+    return gulp.src(['./lib/**/*.scss', './lib/**/*.sass'])
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./dist'));
+});
+
+gulp.task("build", ["clean"], function () {
+    return gulp.run("typescript", "style");
 });
 
 gulp.task('clean', function () {
