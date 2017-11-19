@@ -47,23 +47,6 @@ describe("KeyValueListComponent", () => {
             expect(rendered).to.containMatchingElement(NoElements);
             expect(rendered.find(NoElements).children()).to.contain.text("There is no data.");
         });
-
-        context("When noElementsElementClass is provided", () => {
-            beforeEach(() => {
-                rendered.unmount();
-                component = (
-                    <KeyValueList
-                        data={{}}
-                        noElementsElementClass="no-element"
-                    />
-                );
-                rendered = shallow(component);
-            });
-
-            it("It passes the element class to the NoElements component", () => {
-                expect(rendered.find(NoElements)).to.have.prop("elementClass", "no-element");
-            });
-        });
     });
 
     context("An object with properties is passed", () => {

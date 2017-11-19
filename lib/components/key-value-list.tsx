@@ -8,7 +8,6 @@ export interface KeyValueListProps {
     data?: { [prop: string ]: string };
     keyLabels?: { [prop: string ]: string };
     noElementsMessage?: string;
-    noElementsElementClass?: string;
 }
 
 const defaults: Readonly<KeyValueListProps> = {
@@ -41,7 +40,7 @@ export class KeyValueList extends React.PureComponent<KeyValueListProps & React.
     }
 
     private getNoElementsComponent() {
-        return <NoElements elementClass={this.getNoElementElementClass()}>{this.getNoElementMessage()}</NoElements>;
+        return <NoElements>{this.getNoElementMessage()}</NoElements>;
     }
 
     private getElementClass() {
@@ -50,10 +49,6 @@ export class KeyValueList extends React.PureComponent<KeyValueListProps & React.
 
     private getNoElementMessage() {
         return this.props.noElementsMessage || defaults.noElementsMessage;
-    }
-
-    private getNoElementElementClass() {
-        return this.props.noElementsElementClass || defaults.noElementsElementClass;
     }
 
     private getKeyValues(): KeyValue[] {
