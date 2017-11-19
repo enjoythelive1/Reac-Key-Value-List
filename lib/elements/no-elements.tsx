@@ -2,6 +2,7 @@ import * as React from "react";
 
 export interface NoElementsProps {
     elementClass?: string;
+    children?: React.ReactNode;
 }
 
 const defaults: Readonly<NoElementsProps> = {
@@ -10,7 +11,11 @@ const defaults: Readonly<NoElementsProps> = {
 
 export class NoElements extends React.PureComponent<NoElementsProps & React.ClassAttributes<NoElements>> {
     public render() {
-        return <div className={this.getElementClass()}>{this.props.children}</div>;
+        return <div className={this.getElementClass()}>{this.getContents()}</div>;
+    }
+
+    private getContents() {
+        return this.props.children || "There is no data.";
     }
 
     private getElementClass() {
