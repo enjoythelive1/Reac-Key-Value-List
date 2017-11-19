@@ -1,0 +1,26 @@
+.key-value-list {
+  .no-elements-message {
+    padding: 20px;
+    font-size: small;
+    text-align: center;
+  }
+
+  .key-value-item {
+    padding: 5px;
+
+    &::after {
+      float: none;
+      clear: both;
+    }
+
+    label.key, div.value {
+      float: left;
+      display: block;
+      padding: 5px;
+    }
+
+    label.key {
+      font-weight: bold;
+    }
+  }
+}
