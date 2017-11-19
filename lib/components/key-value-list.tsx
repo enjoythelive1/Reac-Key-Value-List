@@ -1,5 +1,6 @@
 import * as React from "react";
 import {NoElements} from "../elements/no-elements";
+import {KeyValueItem} from "./key-value-item";
 import {KeyValue} from "../structures/key-value";
 
 export interface KeyValueListProps {
@@ -25,7 +26,18 @@ export class KeyValueList extends React.PureComponent<KeyValueListProps & React.
     }
 
     private getContent() {
-        return this.hasKeys() ? <div/> : this.getNoElementsComponent();
+        return this.hasKeys() ?
+            this.getKeyValueItems(this.getKeyValues()) :
+            this.getNoElementsComponent();
+    }
+
+    private getKeyValueItems(keyValues: KeyValue[]) {
+        return keyValues.map((keyValue) => (
+            <KeyValueItem
+                key={keyValue.key}
+                keyValue={keyValue}
+            />
+        ));
     }
 
     private getNoElementsComponent() {
